@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Clases</title>
+</head>
+<body>
+    <h1>Clases del Gimnasio</h1>
+    <a href="/clases/nueva">+ Nueva Clase</a>
+    <table border="1">
+        <thead>
+            <tr><th>ID</th><th>Título</th><th>Hora inicio</th><th>Duración (min)</th><th>Aforo</th><th>Plazas libres</th></tr>
+        </thead>
+        <tbody>
+            <tr th:each="clase : ${clases}">
+                <td th:text="${clase.id}"></td>
+                <td th:text="${clase.titulo}"></td>
+                <td th:text="${clase.horaInicio}"></td>
+                <td th:text="${clase.duracionMinutos}"></td>
+                <td th:text="${clase.aforoMaximo}"></td>
+                <td th:text="${clase.plazasDisponibles}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

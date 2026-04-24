@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Clase</title>
+</head>
+<body>
+    <h1>Crear nueva clase</h1>
+    <form th:action="@{/clases/guardar}" th:object="${clase}" method="post">
+        <label>Título:</label>
+        <input type="text" th:field="*{titulo}" required/><br/>
+        <label>Fecha y hora inicio:</label>
+        <input type="datetime-local" th:field="*{horaInicio}" required/><br/>
+        <label>Duración (minutos):</label>
+        <input type="number" th:field="*{duracionMinutos}" required/><br/>
+        <label>Aforo máximo:</label>
+        <input type="number" th:field="*{aforoMaximo}" required/><br/>
+        <label>Plazas disponibles:</label>
+        <input type="number" th:field="*{plazasDisponibles}" required/><br/>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/clases">Cancelar</a>
+</body>
+</html>
